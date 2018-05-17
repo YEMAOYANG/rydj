@@ -1,0 +1,130 @@
+/********************************** 公共样式开始 **********************************/
+body,html{
+	background-color: #EDF1F6;
+	/*解决移动端点击后会有阴影*/
+	-webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select:none;
+}
+.pb43{
+	padding-bottom: 4.3rem;
+}
+.mt1{
+	margin-top: 1rem;
+}
+/**
+ * 帮助列表
+ */
+.help-container{
+	
+}
+.top-container{
+	padding: .75rem;
+	color: #202024;
+	font-size: 13px;
+	border-bottom: 1px solid #EDEDED;
+	background-color: #FFFFFF;
+}
+.help-ul{
+	background-color: #FFFFFF;
+}
+.help-ul>li{
+	padding: .75rem 1.25rem;
+	color: #0076EE;
+	font-size: 13px;
+	border-bottom: 1px solid #EDEDED;
+}
+.help-ul>li>div{
+	cursor: pointer;
+	text-decoration: underline;
+	line-height: 1rem;
+}
+.help-ul>li>div img{
+	max-width: 100% !important;
+	height: auto !important;
+}
+.help-ul li:active div{
+	-webkit-transform: translateY(2px);
+	-moz-transform: translateY(2px);
+}
+/**
+ * 反馈按钮
+ */
+.feedback-container{
+	margin-top: .5rem;
+	background-color: #FFFFFF;
+	padding: .75rem;
+	position: relative;
+	color: #202024;
+	font-size: 13px;
+	cursor: pointer;
+}
+.feedback-container:active{
+	background-color: #EDEDED;
+}
+.feedback-container>.fa{
+	position: absolute;
+	top: 50%;
+	right: .75rem;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	color: #A9AEB1;
+}
+/**
+ * 在线客服
+ */
+.onlineService{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+}
+.online-btn{
+	padding: 0 .75rem;
+	margin-bottom: .25rem;
+}
+.btn{
+    padding: .6rem 0;
+    text-align: center;
+    text-decoration: none;
+    color: #362E2B;
+    font-size: 15px;
+    width: 100%;
+    display: block;
+    background-color: #FFD402;
+    border-radius: 5px;
+}
+.btn>img{
+	width: .7rem;
+	vertical-align: middle;
+}
+.btn>span{
+	margin-left: .2rem;
+    display: inline-block;
+    vertical-align: middle;
+}
+.online-time{
+	font-size: 14px;
+	color: #A9AEB1;
+	text-align: center;
+	margin-bottom: .95rem;
+}
+
+
+/**
+ * QQ客服在线咨询样式修改
+ */
+.class_qidian_wpa{
+	bottom: 1.95rem !important;
+    left: .75rem;
+	opacity: 0 !important; 
+    width: 90% !important;
+    height: 2rem !important;
+}
+.class_qidian_wpa.absolute{
+    bottom: 0 !important;
+    position: absolute !important;
+}

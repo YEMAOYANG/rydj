@@ -1,0 +1,114 @@
+html,body{
+	background-color: #060907;
+	/*解决移动端点击后会有阴影*/
+	-webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select:none;
+}
+.top-container{
+	padding-top: 5.075rem;
+	background-image: url(../../images/teamShare/3-1.png);
+	background-position:  bottom;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	text-align: center;
+	min-height: 10.35rem;
+}
+.top-user-img{
+	width: 3.975rem;
+	height: 3.975rem;
+	margin: 0 auto 0.225rem;
+}
+.top-user-img>img{
+	width: 100%;
+	max-width: 3.975rem;
+	max-height: 3.975rem;
+}
+.top-user-name{
+	color: #000000;
+	font-size: .75rem;
+	margin-bottom: 0.4rem;
+}
+.top-room-info{
+	font-size: .6rem;
+	color: #FEFEFE;
+	margin-bottom: 0.4rem;
+}
+.room-info,.game-name{
+	margin-bottom: 0.225rem;
+}
+.top-room-btn{
+    cursor: pointer;
+    position: relative;
+}
+.top-room-btn:active .room-btn-bg{
+	-webkit-transform: translateY(2px);
+	-moz-transform: translateY(2px);
+}
+.room-btn-bg{
+	width: 14.325rem;
+	/*width: 10rem;*/
+}
+.room-btn-font{
+	position: absolute;
+	width: 4.7rem;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	-moz-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+}
+/**
+ * 下部
+ */
+.bottom-container{
+	background: url(../../images/teamShare/beijin-xia.png);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	min-height: 12rem;
+	text-align: center;
+	position: relative;
+}
+.footer-slogan{
+	position: fixed;
+	width: 88%;
+	left: 0;
+	bottom: 0;
+	background-color: #FFFFFF;
+	height: 3.35rem;
+	padding: .325rem 1.2rem;
+}
+.footer-top{
+	font-size: 1.2rem;
+	margin-bottom: 0.425rem;
+}
+.left-content{
+	float: left;
+}
+.footer-slogan-img{
+	width: 7.55rem;
+	height: 1rem;
+	margin: 0 auto;
+}
+.footer-slogan-img>img{
+	width: 100%;
+	max-width: 7.55rem;
+	height: 1rem;
+}
+.right-logo{
+	position: absolute;
+	right: 1.15rem;
+	bottom: 0.475rem;
+	border: 6px solid #FFFFFF;
+	width: 4.125rem;
+	height: 4.125rem;
+	border-radius: 20px;
+}
+.right-logo>img{
+	width: 100%;
+	max-width: 4.125rem;
+	max-height: 4.125rem;
+	border-radius: 20px;
+}

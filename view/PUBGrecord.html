@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+		<title>战绩详情</title>
+		<link rel="stylesheet" href="../css/lib/reset.css" />
+		<link rel="stylesheet" href="../css/record/PUBGrecord.css" />
+		<script type="text/javascript" src="../js/lib/rem.js" ></script>
+	</head>
+	<body>
+		<div class="main-container" id="app">
+			<!-- 头部用户昵称以及日期 -->
+			<div class="top-container clearfix">
+				<div class="pull-left top-user-img">
+					<div class="user-img">
+						<img :src="matchInfo.sFaceUrl" onerror="this.src='../images/record/hero-default.png'" />
+					</div>
+				</div>
+				<div class="pull-left top-user-info">
+					<div class="user-name ellipsis">
+						{{matchInfo.sNickName}}
+					</div>
+					<div class="user-match-time">
+						{{matchInfo.lBattleTime}}&emsp;天梯赛
+					</div>
+				</div>
+			</div>
+			<!-- 中间名次 -->
+			<div class="mid-container">
+				<div class="mid-match-ranking">
+					<div class="match-type">
+						<div class="match-group">
+							<span v-for="item in matchInfo.emBattle"></span>
+						</div>
+						<div class="match-group" v-if="matchInfo.iRankInDs <= 10">
+							<div v-if="matchInfo.iRankInDs == 1" class="first match-img"></div>
+							<div v-else-if="matchInfo.iRankInDs == 2" class="second match-img"></div>
+							<div v-else-if="matchInfo.iRankInDs <= 10" class="topTen match-img"></div>
+						</div>
+					</div>
+					<div class="ranking-info">
+						<span class="ranking-num">
+							第{{matchInfo.iRankInDs}}名
+						</span>
+						<span class="ranking-num">
+							本场评分：<span class="ranking-scroe">{{matchInfo.iCurShowScore}}</span>
+						</span>
+					</div>
+					<div class="v5-logo"></div>
+				</div>
+				<div class="match-style-container clearfix">
+					<div v-if="matchInfo.vTag != 0">
+						<div class="pull-left style-font">
+							本场风格：
+						</div>
+						<div class="pull-left style-tag">
+							<span v-for="item in vTag">
+								{{item}}
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 下部数据展示 -->
+			<div class="bottom-match-data">
+				<!-- 个人数据 -->
+				<div class="match-data-group">
+					<!-- 标题 -->
+					<div class="match-data-title">
+						<b></b>
+						<span>个人数据</span>
+						<b></b>
+					</div>
+					<ul class="match-data-ul clearfix">
+						<li>
+							<div class="match-data-num">
+								{{matchInfo.dTimesKill}}
+							</div>
+							<div class="match-data-font">
+								本场击杀
+							</div>
+						</li>
+						<li>
+							<div class="match-data-num">
+								{{matchInfo.sDamageAmount}}
+							</div>
+							<div class="match-data-font">
+								伤害量
+							</div>
+						</li>
+						<li>
+							<div class="match-data-num">
+								{{matchInfo.sHeadShotCount}}%
+							</div>
+							<div class="match-data-font">
+								爆头率
+							</div>
+						</li>
+						<li>
+							<div class="match-data-num">
+								{{matchInfo.sSurvivalTime}}min
+							</div>
+							<div class="match-data-font">
+								生存时间
+							</div>
+						</li>
+						<li>
+							<div class="match-data-num">
+								{{matchInfo.sHealAmount}}
+							</div>
+							<div class="match-data-font">
+								治疗量
+							</div>
+						</li>
+						<li>
+							<div class="match-data-num">
+								{{matchInfo.sMovingDistance}}km
+							</div>
+							<div class="match-data-font">
+								移动距离
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!-- 团队数据 -->
+				<div v-if="vTeamInfo != 0" class="match-data-group">
+					<!-- 标题 -->
+					<div class="match-data-title">
+						<b></b>
+						<span>团队数据</span>
+						<b></b>
+					</div>
+					<table class="match-table">
+						<tr>
+							<td>队友</td>
+							<td>淘汰</td>
+							<td>伤害</td>
+							<td>治疗</td>
+							<td>结果</td>
+						</tr>
+						<tr v-for="item in vTeamInfo">
+							<td>
+								<div class="teammate-img tableCell">
+									<img :src="item.sFaceUrl" onerror="this.src='../images/record/hero-default.png'" />
+								</div>
+								<div class="teammate-name tableCell ellipsis">
+									{{item.sNickName}}
+								</div>
+							</td>
+							<td>
+								{{item.iResult}}
+							</td>
+							<td>
+								{{item.iHurt/100}}
+							</td>
+							<td>
+								{{item.iTreat/100}}
+							</td>
+							<td>
+								{{item.iKills == 1?"生":"和"}}
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/lib/jquery.min.js" ></script>
+	<script type="text/javascript" src="../js/lib/fastclick.min.js" ></script>
+	<script src="https://cdn.bootcss.com/vue-resource/1.0.3/vue-resource.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="../js/lib/vue.js" ></script>
+	<script type="text/javascript" src="../js/PUBGrecord.js" ></script>
+</html>

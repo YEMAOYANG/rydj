@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+		<title>分享</title>
+		<link rel="stylesheet" href="../css/lib/font-awesome.min.css" />
+		<link rel="stylesheet" href="../css/lib/reset.css" />
+		<link rel="stylesheet" href="../css/record/teamShare.css" />
+		<script type="text/javascript" src="../js/lib/rem.js" ></script>
+	</head>
+	<body>
+		<div class="main-container" id="app">
+			<div class="top-container">
+				<div class="top-user-img">
+					<img src="../images/record/hero-default.png" />
+				</div>
+				<div class="top-user-name">
+					这里是用户名字
+				</div>
+				<div class="top-room-info">
+					<div class="room-info">
+						房间ID：000025
+					</div>
+					<div class="game-name">
+						游戏：王者荣耀
+					</div>
+				</div>
+				<div class="top-room-btn" @click="share">
+					<img class="room-btn-bg" src="../images/teamShare/btnBg.png" />
+					<img class="room-btn-font" src="../images/teamShare/joinRoom.png" />
+				</div>
+			</div>
+			<div class="bottom-container"></div>
+			<div class="footer-slogan">
+				<div class="left-content">
+					<div class="footer-top">
+						爱电竞&nbsp;爱竞猜&nbsp;爱社交
+					</div>
+					<div class="footer-slogan-img">
+						<img src="../images/teamShare/slogan.png" />
+					</div>
+				</div>
+				<div class="right-logo">
+					<img src="../images/teamShare/v5logo.jpg" />
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/lib/jquery.min.js" ></script>
+	<script type="text/javascript" src="../js/lib/fastclick.min.js" ></script>
+	<script type="text/javascript" src="../js/lib/native.js" ></script>
+	<script src="https://cdn.bootcss.com/vue-resource/1.0.3/vue-resource.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="../js/lib/vue.js" ></script>
+	<script>
+		var app = new Vue({
+			el: '#app',
+			data: {
+				
+			},
+			created() {
+				//========== 这句代码是为了解决:active伪类在手机上不生效
+				document.body.addEventListener('touchstart', function () {});
+			},
+			methods: {
+				share() {
+						
+				}
+			}
+		})
+	</script>
+</html>

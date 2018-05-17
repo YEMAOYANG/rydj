@@ -1,0 +1,237 @@
+/********************************** 公共样式开始 **********************************/
+.main-container{
+	padding: .75rem;
+}
+.pull-left{
+	float: left;
+}
+
+.pull-right{
+	float: right;
+}
+
+.clearfix:before,
+.clearfix:after {
+	display: table;
+	content: " "
+}
+
+.clearfix:after {
+	clear: both
+}
+
+.ellipsis{
+	-o-text-overflow: ellipsis;
+    word-break: normal;
+    word-wrap: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ellipsis-2 {
+	display: -webkit-box;
+	overflow: hidden;
+	white-space: normal!important;
+	text-overflow: ellipsis;
+	word-wrap: break-word;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical
+}
+.match-data-group{
+	margin-bottom: .75rem;
+}
+.match-data-title{
+	margin-bottom: .5rem;
+}
+.match-data-title b{
+	border-top: 1px solid #EDEDED;
+	width: 7rem;
+	display: inline-block;
+    vertical-align: middle;
+}
+.match-data-title span{
+	color: #202024;
+	font-size: 13px;
+}
+/********************************** 公共样式结束 **********************************/
+/**
+ * 头部用户昵称以及日期
+ */
+.top-container{
+	padding: .5rem;
+}
+.top-user-img{
+	margin-right: .75rem;
+	text-align: center;
+}
+.user-img{
+	width: 2.2rem;
+	height: 2.2rem;
+}
+.user-img>img{
+	width: 100%;
+	max-width: 2.2rem;
+	max-height: 2.2rem;
+	border-radius: 50%;
+}
+.top-user-info{
+	margin-top: .15rem;
+}
+.user-name{
+	color: #202024;
+	font-size: 15px;
+	max-width: 10rem;
+	margin-bottom: .5rem;
+	text-align: left;
+}
+.user-match-time{
+	color: #6C6C6C;
+	font-size: 13px;
+}
+/**
+ * 中间名次
+ */
+.mid-match-ranking{
+	background-color: #F5F5F5;
+	padding: 1rem;
+	border-radius: .5rem;
+	position: relative;
+	color: #202024;
+}
+.match-type{
+	margin-bottom: .35rem;
+}
+.match-group{
+	display: inline-block;
+}
+.match-group>span{
+	width: .3rem;
+	height: .95rem;
+	display: inline-block;
+	margin-right: .2rem;
+	background: url(../../images/record/score_icon_number@2x.png) no-repeat;
+	background-size: contain;
+}
+.match-img{
+	width: 2.3rem;
+	height: .95rem;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.match-img.first{
+	background-image: url(../../images/record/score_icon_champion@2x.png);
+}
+.match-img.second{
+	background-image: url(../../images/record/score_icon_second@2x.png);
+}
+.match-img.topTen{
+	background-image: url(../../images/record/score_icon_ten@2x.png);
+}
+
+.ranking-num{
+	font-size: 13px;
+}
+.ranking-scroe{
+	font-size: 25px;
+}
+.v5-logo{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 8.65rem;
+	height: 8.05rem;
+	background: url(../../images/record/score_image_miao@2x.png) no-repeat;
+	background-size: contain;
+}
+.match-style-container{
+	margin-top: .9rem;
+	color: #202024;
+	font-size: 13px;
+}
+.style-font{
+	width: 20%;
+}
+.style-tag{
+	width: 80%;
+}
+.style-tag>span{
+	padding: .1rem .4rem;
+	display: inline-block;
+	border: 1px solid;
+	border-radius: 2px;
+	margin-right: .3rem;
+	margin-bottom: .5rem;
+}
+/**
+ * 下部数据展示
+ */
+/*个人数据*/
+.match-data-ul{
+	text-align: center;
+	background-color: #F5F5F5;
+	border-radius: 10px;
+}
+.match-data-ul>li{
+	float: left;
+	width: 24.5%;
+	padding: .75rem;
+}
+.match-data-num{
+	font-size: 15px;
+	color: #202024;
+}
+.match-data-font{
+	color: #6C6C6C;
+	font-size: 11px;
+	margin-top: .15rem;
+}
+/*团队数据*/
+.match-table{
+	width: 100%;
+	font-size: 13px;
+	text-align: center;
+	border: 1px solid #F5F5F5;
+	border-collapse: separate;
+	border-radius: 10px;
+	color: #202024;
+}
+.match-table tr:first-child td:first-child{
+	border-top-left-radius: 10px;
+}
+.match-table tr:first-child td:last-child{
+	border-top-right-radius: 10px;
+}
+.match-table tr:last-child td:first-child{
+	border-bottom-left-radius: 10px;
+}
+.match-table tr:last-child td:last-child{
+	border-bottom-right-radius: 10px;
+}
+.match-table tr:nth-child(odd){
+	background-color: #F5F5F5;
+}
+.match-table td{
+	padding: .5rem;
+	vertical-align: middle;
+}
+.tableCell{
+	display: table-cell;
+}
+.teammate-img{
+	width: 1.5rem;
+	height: 1.5rem;
+	margin-right: .5rem;
+}
+.teammate-img>img{
+	width: 100%;
+	max-width: 1.5rem;
+	max-height: 1.5rem;
+	vertical-align: middle;
+    border-radius: 50%
+}
+.teammate-name{
+	max-width: 4.5rem;
+	padding-left: .2rem;
+	vertical-align: middle;
+}

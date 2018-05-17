@@ -1,0 +1,103 @@
+/********************************** 公共样式开始 **********************************/
+body,html{
+	background-color: #EDF1F6;
+	/*解决移动端点击后会有阴影*/
+	-webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select:none;
+}
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1;
+    margin-top: .3rem;
+    margin-bottom: .1rem;
+}
+h1{
+	font-size: 14px;
+	font-weight: bold;
+}
+.clearfix:before,
+.clearfix:after {
+	display: table;
+	content: " "
+}
+
+.clearfix:after {
+	clear: both
+}
+
+
+.helpInfo-container{
+	padding: .5rem;
+}
+.helpInfo-ul>li{
+	background-color: #FFFFFF;
+	border-radius: 5px;
+}
+.info-container{
+	padding: .8rem 1.2rem;
+	border-bottom: 1px solid #EDEDED;
+}
+.info-title{
+	font-size: 15px;
+	color: #202024;
+	margin-bottom: .6rem;
+}
+.info-detail{
+	color: #6C6C6C;
+	font-size: 13px;
+	line-height: 1rem;
+}
+.info-detail img{
+	max-width: 100% !important;
+	height: auto !important;
+}
+.info-btn-container{
+	padding: .7rem 0;
+}
+.info-btn-container .btn-container{
+	float: left;
+	width: 50%;
+	text-align: center;
+	position: relative;
+	color: #6C6C6C;
+	font-size: 13px;
+	cursor: pointer;
+}
+.info-btn-container .btn-container:nth-child(odd):after{
+	position: absolute;
+	top: -.4rem;
+	right: 0;
+	width: 1px;
+	height: 1.5rem;
+	content: '';
+	-webkit-transform: scaleY(.5);
+	transform: scaleY(.5);
+	background-color: #EDEDED;
+}
+.info-btn-container .btn-container .fa{
+	margin-right: .5rem;
+}
+.useless.active>.fa{
+	color: #A9AEB1;
+}
+.itworks.active>.fa{
+	color: #F64F4F;
+}
+.disabled{
+	color: #D6DBE1 !important;
+}
+/**
+ * 感谢您的反馈
+ */
+.thk-feedback{
+	background-color: #000000;
+	width: 50%;
+	margin: 0 auto;
+	font-size: 13px;
+	color: #FFFFFF;
+	padding: .6rem 0;
+	text-align: center;
+	border-radius: 20px;
+	opacity: 0;
+}

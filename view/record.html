@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+		<title>战绩详情</title>
+		<link rel="stylesheet" href="../css/lib/reset.css" />
+		<link rel="stylesheet" href="../css/record/record.css" />
+		<script type="text/javascript" src="../js/lib/rem.js" ></script>
+	</head>
+	<body>
+		<div class="main-container" id="app">
+			<!-- 头部标题栏 -->
+			<ul class="top-ul clearfix">
+				<li>
+					总时长：{{matchInfo.useTime}}分钟
+				</li>
+				<li>
+					<span class="top-font" :class="{ win : matchInfo.gameResult == 1, lost : matchInfo.gameResult == 2 }">
+						{{matchInfo.ourKill}}
+					</span>
+					<span class="vs">
+						VS
+					</span>
+					<span class="top-font" :class="{ lost : matchInfo.gameResult == 1, win : matchInfo.gameResult == 2 }">
+						{{matchInfo.enemyKill}}
+					</span>
+				</li>
+				<li>
+					{{matchInfo.battleType}}
+				</li>
+			</ul>
+			<!-- 中间详情 -->
+			<!-- 我方胜利 -->
+			<div class="record-group">
+				<!-- 标题 -->
+				<div class="group-title" :class="{ winBg : matchInfo.gameResult == 1, lostBg : matchInfo.gameResult == 2 }">
+					{{matchInfo.gameResult == 1?"我方胜利":"我方失败"}}
+				</div>
+				<ul class="group-ul">
+					<li v-for="item in ourBattleInfo">
+						<div class="pull-left group-user-img">
+							<div class="user-img">
+								<img :src="item.heroImg" onerror="this.src='../images/record/hero-default.png'" />
+							</div>
+							<div class="hero-level">
+								LV.{{item.level}}
+							</div>
+						</div>
+						<div class="pull-left group-user-name">
+							<div class="user-name ellipsis">
+								{{item.userName}}
+							</div>
+							<div class="user-equip">
+								<span v-for="equip in item.equipments">
+									<img :src="equip" onerror="this.src='../images/record/hero-default.png'" />
+								</span>
+							</div>
+						</div>
+						<div class="pull-right group-user-info">
+							<div class="user-info">
+								<span v-if="item.mvp == 1">
+									<img src="../images/record/mvp.png" />
+								</span>
+								<span>
+									{{item.score/100}}
+								</span>
+							</div>
+							<ul class="user-info-data">
+								<li>
+									<span>
+										<img src="../images/record/icon-kill.png" />
+									</span>
+									<span>
+										{{item.killCnt}}
+									</span>
+								</li>
+								<li>
+									<span>
+										<img src="../images/record/icon-die.png" />
+									</span>
+									<span>
+										{{item.deadCnt}}
+									</span>
+								</li>
+								<li>
+									<span>
+										<img src="../images/record/icon-assists.png" />
+									</span>
+									<span>
+										{{item.assistCnt}}
+									</span>
+								</li>
+							</ul>
+						</div>
+						<div style="clear: both;"></div>
+					</li>
+				</ul>
+			</div>
+			<!-- 敌方 -->
+			<div class="record-group">
+				<!-- 标题 -->
+				<div class="group-title" :class="{ lostBg : matchInfo.gameResult == 1, winBg : matchInfo.gameResult == 2 }">
+					{{matchInfo.gameResult == 2?"敌方胜利":"敌方失败"}}
+				</div>
+				<ul class="group-ul">
+					<li v-for="item in enemyBattleInfo">
+						<div class="pull-left group-user-img">
+							<div class="user-img">
+								<img :src="item.heroImg" onerror="this.src='../images/record/hero-default.png'" />
+							</div>
+							<div class="hero-level">
+								LV.{{item.level}}
+							</div>
+						</div>
+						<div class="pull-left group-user-name">
+							<div class="user-name ellipsis">
+								{{item.userName}}
+							</div>
+							<div class="user-equip">
+								<span v-for="equip in item.equipments">
+									<img :src="equip" onerror="this.src='../images/record/hero-default.png'" />
+								</span>
+							</div>
+						</div>
+						<div class="pull-right group-user-info">
+							<div class="user-info">
+								<span v-if="item.mvp == 1">
+									<img src="../images/record/mvp.png" />
+								</span>
+								<span>
+									{{item.score/100}}
+								</span>
+							</div>
+							<ul class="user-info-data">
+								<li>
+									<span>
+										<img src="../images/record/icon-kill.png" />
+									</span>
+									<span>
+										{{item.killCnt}}
+									</span>
+								</li>
+								<li>
+									<span>
+										<img src="../images/record/icon-die.png" />
+									</span>
+									<span>
+										{{item.deadCnt}}
+									</span>
+								</li>
+								<li>
+									<span>
+										<img src="../images/record/icon-assists.png" />
+									</span>
+									<span>
+										{{item.assistCnt}}
+									</span>
+								</li>
+							</ul>
+						</div>
+						<div style="clear: both;"></div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/lib/jquery.min.js" ></script>
+	<script type="text/javascript" src="../js/lib/fastclick.min.js" ></script>
+	<script src="https://cdn.bootcss.com/vue-resource/1.0.3/vue-resource.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="../js/lib/vue.js" ></script>
+	<script type="text/javascript" src="../js/record.js" ></script>
+</html>

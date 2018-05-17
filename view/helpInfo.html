@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+		<title>帮助</title>
+		<link rel="stylesheet" href="../css/lib/font-awesome.min.css" />
+		<link rel="stylesheet" href="../css/lib/reset.css" />
+		<link rel="stylesheet" href="../css/record/animate.css" />
+		<link rel="stylesheet" href="../css/record/helpInfo.css" />
+		<script type="text/javascript" src="../js/lib/rem.js" ></script>
+	</head>
+	<body>
+		<div class="main-container" id="app">
+			<div class="helpInfo-container">
+				<ul class="helpInfo-ul">
+					<li>
+						<div class="info-container">
+							<div class="info-title">
+								{{param.title}}
+							</div>
+							<div class="info-detail" v-html="param.content"></div>
+						</div>
+						<div class="info-btn-container clearfix">
+							<div @click="changeStatus('useless',$event)" class="btn-container useless" :class="{ active : btnStatus == 1, disabled : btnStatus == 2 }">
+								<i v-if="btnStatus == 1" class="fa fa-thumbs-down"></i><i v-else class="fa fa-thumbs-o-down"></i>没用
+							</div>
+							<div @click="changeStatus('itworks',$event)" class="btn-container itworks" :class="{ active : btnStatus == 2, disabled : btnStatus == 1 }">
+								<i v-if="btnStatus == 2" class="fa fa-thumbs-up"></i><i v-else class="fa fa-thumbs-o-up"></i>有用
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>	
+			<!-- 感谢您的反馈 -->
+			<div class="thk-feedback">
+				感谢您的反馈
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/lib/jquery.min.js" ></script>
+	<script type="text/javascript" src="../js/lib/fastclick.min.js" ></script>
+	<script src="https://cdn.bootcss.com/vue-resource/1.0.3/vue-resource.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="../js/lib/vue.js" ></script>
+	<script type="text/javascript" src="../js/lib/common.js" ></script>
+	<script>
+		var app = new Vue({
+			el: '#app',
+			data: {
+				param: {},
+				btnStatus: 0
+			},
+			created() {
+				this.loadData();
+			},
+			methods: {
+				loadData() {
+					var title = decodeURI(decodeURI(this.getUrlParam("title")));
+					var content = decodeURI(decodeURI(this.getUrlParam("content")));
+					this.param.title = title;
+					this.param.content = content;
+				},
+				changeStatus(type,_this) {
+					if(this.btnStatus != 0){
+						return;
+					}
+					if(type == "useless"){
+						this.btnStatus = 1;
+//						$(".fa").removeClass("fa-thumbs-o-down");
+//						_this.currentTarget.childNodes[0].className = "fa fa-thumbs-down";
+					}else{
+						this.btnStatus = 2;
+//						$(".fa").removeClass("fa-thumbs-o-up");
+//						_this.currentTarget.childNodes[0].className = "fa fa-thumbs-up";
+					}
+					$(".thk-feedback").css("opacity","1").addClass("animated bounceIn");
+					setTimeout(function(){
+						$(".thk-feedback").css("opacity","0").removeClass("animated bounceIn");
+					},1500);
+				},
+				/**
+				 * 接收页面参数
+				 */
+				getUrlParam(Para,Url) {
+				    var reg = new RegExp("(^|&)" + Para + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+				    var r = null;
+				    if(Url==null)
+				    	r = window.location.search.substr(1).match(reg);  //匹配目标参数
+				    else
+				    	r = Url.substr(1).match(reg);  //匹配目标参数
+				    if (r != null) return decodeURI(r[2]); return null; //返回参数值
+				}
+			}
+		})
+	</script>
+</html>

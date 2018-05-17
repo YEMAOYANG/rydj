@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+		<title>帮助</title>
+		<link rel="stylesheet" href="../css/lib/font-awesome.min.css" />
+		<link rel="stylesheet" href="../css/lib/reset.css" />
+		<link rel="stylesheet" href="../css/record/help.css" />
+		<script type="text/javascript" src="../js/lib/rem.js" ></script>
+	</head>
+	<body>
+		<div class="main-container" id="app">
+			<!-- 帮助列表 -->
+			<div class="help-container" :class="{ pb43 : listLength < 10 }">
+				<div class="top-container">
+					猜您需要的帮助：
+				</div>
+				<ul class="help-ul">
+					<li v-for="(item, index) in list" @click="goLink(item)">
+						<div>{{index+1}}.{{item.title}}</div>
+					</li>
+				</ul>
+				<!-- 意见反馈按钮 -->
+				<div class="feedback-container">
+					意见反馈
+					<i class="fa fa-chevron-right"></i>
+				</div>
+			</div>
+			<!-- 在线客服 -->
+			<div :class="{ onlineService : listLength < 10, mt1 : listLength >= 10 }">
+				<div class="online-btn">
+					<a class="btn" id="serviceBtn" href="mqqwpa://im/chat?chat_type=wpa&uin=2852359100&version=1&src_type=web&web_src=oicqzone.com" target="_blank">
+					<!--<a class="btn" href="javascript:void(0)" id="serviceBtn">-->
+						<img src="../images/record/qq.png" />
+						<span>在线客服</span>
+					</a>
+				</div>
+				<div class="online-time">
+					每日09:00-18:00在线服务
+				</div>
+			</div>
+		</div>
+	</body>
+	<!-- QQ咨询代码引入 -->
+	<script id="qd2852155387a3be9936b04cd7f5e6995b4c0326af6f" src="https://wp.qiye.qq.com/qidian/2852155387/a3be9936b04cd7f5e6995b4c0326af6f" charset="utf-8" async defer></script>
+	<script type="text/javascript" src="../js/lib/jquery.min.js" ></script>
+	<script type="text/javascript" src="../js/lib/fastclick.min.js" ></script>
+	<script type="text/javascript" src="../js/lib/native.js" ></script>
+	<script src="https://cdn.bootcss.com/vue-resource/1.0.3/vue-resource.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="../js/lib/vue.js" ></script>
+	<script>
+		var app = new Vue({
+			el: '#app',
+			data: {
+				list: [{
+					title: "如何获取V币？",
+					content: "<p>1.	每日完成指定任务可获得活跃值、V币奖励。</p><p>2.	完成每日任务可从活跃度卡片奖励获得大量V币。</p><p>3.	每日签到可获得称号相应的V币奖励。</p><p>4.	V钻充值后参与幸运大转盘有机会获得高额V币奖励。</p><p>5.	前往竞猜频道参与竞猜获得海量V币。</p>"
+				},{
+					title: "V币有什么作用？",
+					content: "<p>1.	V币可用于比赛竞猜。</p><p>2.	V币可在V币商城兑换海量丰厚礼品！</p><br /><p>注：用户不得以任何非正常途径获取V币，一经发现，将取消其兑奖资格。</p>"
+				},{
+					title: "V钻有什么用？",
+					content: "<p>1.	可通过“我的”—“我的钱包”充值获得V钻。</p><p>2.	V钻现可用于参与幸运大转盘抽取高额V币奖励。</p>"
+				},{
+					title: "天梯规则",
+					content: "<h1>玩法简介：</h1><p>用户在V5平台唤醒王者荣耀或刺激战场进行游戏，结束游戏后回来提交战绩，V5平台将会根据用户的战绩进行评定，给予相应的天梯积分，每日、每周及每月进入天梯积分榜的用户可以获得大量的V币奖励。</p><h1>天梯规则：</h1><p>1.	天梯玩法只限王者荣耀和刺激战场两款游戏，两者之间的积分排名相互独立。</p>"+
+							 "<p>2.	无论是王者荣耀，还是刺激战场，暂时都只支持QQ大区。</p><p>3.	王者荣耀仅限排位赛，刺激战绩仅限经典模式，除此之外的比赛将无法获得积分奖励。</p>"+
+							 "<p>4.	天梯积分以玩家个人的有效数据进行结算。</p><p>5.	排行榜设有日榜、周榜及月榜，每个榜单均在结束之后的24小时内发放奖励。</p>"
+				},{
+					title: "平台主角色规则",
+					content: "<p>1.	用户在第一次提交战绩后，该王者荣耀角色默认为主角色，并且与当前V5账号绑定。</p><p>2.	每个V5账号在一个天梯赛季中，只能绑定一个王者荣耀角色作为主角色。</p>" +
+							 "<p>3.	每个用户在一个赛季中有且只有一次更换主角色的机会。</p><p>4.	每个王者荣耀角色只能绑定一个V5账号。</p>"
+				},{
+					title: "如何添加游戏客服？",
+					content: "<p>前往“我的”—“设置”—“游戏启动设置”添加游戏客服。</p><img src='../images/help/guide_qq_step1@2x.png' /><img src='../images/help/guide_qq_step2@2x.png' />"+
+							 "<img src='../images/help/guide_qq_step3@2x.png' /><img src='../images/help/guide_qq_step4@2x.png' />"
+				},{
+					title: "王者荣耀天梯操作流程",
+					content: "<img src='../images/help/king-homeowner.jpg' /><img src='../images/help/king-tenant.jpg' />"
+				},{
+					title: "刺激战场天梯操作流程",
+					content: "<img src='../images/help/pubg-homeowner.jpg' /><img src='../images/help/pubg-tenant.jpg' />"
+				},{
+					title: "竞猜规则说明",
+					content: "<h1>荣耀电竞平台精彩比赛均默认同意以下所有条例：</h1><p>1.	所有比赛竞猜的关闭时间都以比赛的最终开始时间为准，对于比赛提前或延迟的情况，我们会随时对竞猜的关闭时间作出变更。</p>" +
+							 "<p>2.	比赛竞猜的赔率将会根据双方参与竞猜的总额实时变化，您在参与竞猜时的赔率并不是最终赔率。赔付规则将以最终赔率决定。</p>" +
+							 "<p>3.	每次竞猜最小下注量为100V币，最大下注量不得超过当前可用V币。</p>" +
+							 "<p>4.	若一场竞猜的比赛因赛程调整、延期或无胜负关系，则这场竞猜将会取消，退回参与的V币。</p>" +
+							 "<p>5.	比赛胜负将以实际结果为准，我们将会综合考虑比赛前中后可能发生的特殊情况来做判断。</p>" +
+							 "<p>6.	术语说明</p><p>一血：实际比赛中获得第一滴血的队伍。<br />主宰：王者荣耀比赛中击杀第一只主宰的队伍。<br />十杀：实际比赛中率先获得十次击杀的队伍。</p><br />" +
+							 "<p>荣耀电竞有权变更竞猜规则并对本规则保留最终解释权。</p>"
+				}],
+				listLength: 0
+			},
+			created() {
+				//========== 这句代码是为了解决:active伪类在手机上不生效
+				document.body.addEventListener('touchstart', function () {});
+				this.loadData();
+			},
+			methods: {
+				loadData() {
+					this.listLength = this.list.length;
+					var listLength = this.listLength;
+					setTimeout(function(){
+						/**
+						 * 这段代码是针对QQ咨询功能的调整，当条数大于10条时，因为会出现滚动条，而
+						 * QQ咨询为ifram样式为fixed，我只能控制他在大于十条时根据
+						 * “在线客服”按钮是否显示在浏览器可视范围中来显示和隐藏该iframe
+						 */
+						if(listLength > 10){
+							$("#qidian_wpa_2852155387_57").hide();
+        					$(window).on("scroll", function(event){
+        						if($("#serviceBtn").offset().top < parseInt($(window).height()) + parseInt($(window).scrollTop())){
+        							var wap = document.getElementById('qidian_wpa_2852155387_57').contentWindow.document.getElementsByClassName('wpa-container')[0];
+									wap.style.width = "100%";
+        							$("#qidian_wpa_2852155387_57").show();
+								}else{
+									$("#qidian_wpa_2852155387_57").hide();
+								}
+        					});
+						}else{
+							var wap = document.getElementById('qidian_wpa_2852155387_57').contentWindow.document.getElementsByClassName('wpa-container')[0];
+							wap.style.width = "100%";
+						}
+					},200);
+				},
+				goLink(list) {
+					var title = encodeURI(encodeURI(list.title));
+					var content = encodeURI(encodeURI(list.content));
+					window.location.href = "helpInfo.html?title=" + title + "&content=" + content;
+				}
+			}
+		})
+	</script>
+</html>
